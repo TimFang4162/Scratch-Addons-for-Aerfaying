@@ -1,0 +1,27 @@
+{
+  "name": "变量管理器",
+  "description": "在编辑器中的\"声音\"旁边添加一个选项卡，以轻松更新变量和列表。",
+  "credits": [
+    {
+      "name": "Jeffalo"
+    },
+    {
+      "name": "GarboMuffin"
+    }
+  ],
+  "userscripts": [
+    {
+      "url": "userscript.js",
+      "matches": ["https://scratch.mit.edu/projects/*"]
+    }
+  ],
+  "userstyles": [
+    {
+      "url": "style.css",
+      "matches": ["https://scratch.mit.edu/projects/*"]
+    }
+  ],
+  "tags": ["editor", "recommended"],
+  "enabledByDefault": false,
+  "l10n": true
+}

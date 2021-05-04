@@ -1,0 +1,347 @@
+html {
+  background: var(--accent-1);
+}
+
+body {
+  background: var(--accent-2);
+  font-family: "Sora", sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  font-size: 12px;
+}
+
+.navbar {
+  height: 60px;
+  background: var(--brand-orange);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  user-select: none;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.navbar a {
+  height: 30px;
+}
+
+.logo {
+  height: 30px;
+  margin-right: 20px;
+}
+
+.main {
+  display: flex;
+  height: calc(100% - 60px);
+  width: 100%;
+  align-items: stretch;
+}
+
+.addons-block {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.addons-container {
+  overflow-y: auto;
+  padding: 10px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: grey none;
+  height: 100vh;
+}
+
+@keyframes addonBlink {
+  10% {
+    border: 1px solid var(--accent-3);
+  }
+  25% {
+    border: 1px solid #7e7e7e;
+  }
+  50% {
+    border: 1px solid var(--accent-3);
+  }
+  75% {
+    border: 1px solid #7e7e7e;
+  }
+  100% {
+    border: 1px solid var(--accent-3);
+  }
+}
+
+.icon-type {
+  height: 16px;
+  vertical-align: middle;
+  filter: invert(0) brightness(10);
+  margin-right: 8px;
+}
+
+.disabled {
+  opacity: 50%;
+}
+
+.inline-icon {
+  height: 16px;
+  vertical-align: bottom;
+}
+
+.large-button {
+  color: var(--accent-5);
+  background: var(--accent-2);
+  border: 1px solid #000;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.25s ease;
+  outline: none;
+  height: 32px;
+  font-family: inherit;
+  font-size: 12px;
+}
+.large-button:hover {
+  outline: none;
+  background: #151515;
+}
+
+.clear-button {
+  border-radius: 0 4px 4px 0px;
+  border-left: none !important;
+}
+.clear-button span {
+  vertical-align: middle;
+}
+.clear-button .icon-type {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.clear-settings {
+  display: flex;
+  align-items: center;
+  padding: 0 0px 0px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.clear-settings:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.reverted {
+  transform: rotate(180deg);
+}
+
+.small-button {
+  margin-left: 10px;
+  background: var(--accent-2);
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+.small-button:hover {
+  background: #151515;
+}
+
+.theme-switch {
+  height: 25px;
+  float: right;
+  right: 25px;
+  position: fixed;
+  cursor: pointer;
+}
+.large-dropdown {
+  color: var(--accent-5);
+  background: var(--accent-2);
+  border: 1px solid #000;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: 0.25s ease;
+  outline: none;
+  height: 32px;
+}
+.large-dropdown:hover {
+  outline: none;
+  background: #151515;
+}
+.hidden-button {
+  /* needs !important because it conlicts with display: block */
+  display: none !important;
+}
+#confirmImport {
+  border-color: var(--brand-orange);
+}
+
+/*scrollbar*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* hide track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 4px;
+}
+
+body.iframe .badge:not(.beta-badge) {
+  display: none !important;
+}
+body.iframe .tooltiptext {
+  display: none;
+}
+body.iframe .addon-description {
+  display: none;
+}
+body.iframe .filter-selector {
+  display: none;
+}
+body.iframe .search-box {
+  padding: 0 16px 0 16px;
+}
+body.iframe .navbar {
+  display: none;
+}
+body.iframe .main {
+  /* No calc -60px because there's no navbar */
+  height: 100%;
+}
+body.iframe .setting-label {
+  flex: 2;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+body.iframe .addons-container {
+  padding: 0px;
+  overflow-y: visible;
+}
+body.iframe .addons-block {
+  /* Always show scroll bar to avoid viewport width changing */
+  overflow-y: scroll;
+}
+body.iframe .filter-options {
+  flex-wrap: wrap;
+}
+body.iframe .filter-option {
+  flex-grow: 1;
+  text-align: center;
+}
+body.iframe .search-box input {
+  width: auto;
+  min-width: 10px;
+}
+.categories-shrink {
+  text-align: right;
+  bottom: 0;
+  position: fixed;
+  margin: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+  user-select: none;
+}
+.flipped {
+  transform: scaleX(-1);
+}
+
+.permissions div.main {
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 14rem 10rem;
+}
+
+.permissions-block {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+}
+
+.permissions-block h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.permissions-steps {
+  display: flex;
+  align-items: flex-end;
+}
+
+.permissions-steps > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.permissions-steps > div:not(:last-child) {
+  margin-right: 2rem;
+}
+
+#permissionsBtn {
+  height: 6rem;
+  width: 18rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+#screenshot {
+  height: 10rem;
+}
+
+#running-page {
+  font-weight: bold;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background-color: var(--accent-2);
+  z-index: 999;
+}
+
+#popup-more-settings {
+  margin-left: 12px;
+}
+
+#popup-more-settings > button {
+  background: url(../../images/icons/settings.svg);
+  background-position: 8px 8px;
+  background-repeat: no-repeat;
+  width: max-content;
+}
+color-picker {
+  z-index: 2;
+  filter: drop-shadow(black 2px 4px 6px);
+  position: absolute;
+  top: 30px;
+  left: 0;
+  --color-picker-background-color: #222 !important;
+  --color-picker-color: #fff !important;
+}
+
+button.setting-input.color {
+  position: relative;
+  height: 32px;
+  width: 100px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.color-container {
+  background: linear-gradient(45deg, #777 25%, transparent 25%), linear-gradient(-45deg, #777 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #777 75%), linear-gradient(-45deg, transparent 75%, #777 75%);
+  background-size: 6px 6px;
+  background-position: 0 0, 0 3px, 3px -3px, -3px 0px;
+  border-radius: 5px;
+  background-color: white;
+}

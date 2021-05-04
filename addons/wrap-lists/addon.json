@@ -1,0 +1,26 @@
+{
+  "name": "列表项目自动换行",
+  "description": "当字符过多时,列表项将自动换行,而不是以\"...\"结尾",
+  "credits": [
+    {
+      "name": "TheColaber",
+      "link": "https://scratch.mit.edu/users/TheColaber"
+    }
+  ],
+  "userscripts": [
+    {
+      "url": "userscript.js",
+      "matches": ["https://scratch.mit.edu/projects/*","*://aerfaying.com/Projects/*/Editor","*://*.gitblock.cn/Projects/*/Editor"]
+    }
+  ],
+  "userstyles": [
+    {
+      "url": "style.css",
+      "matches": ["https://scratch.mit.edu/projects/*",
+        "*://aerfaying.com/Projects/*/Editor",
+        "*://*.gitblock.cn/Projects/*/Editor"]
+    }
+  ],
+  "tags": ["editor"],
+  "l10n": true
+}

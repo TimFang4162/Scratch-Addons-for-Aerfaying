@@ -1,0 +1,21 @@
+{
+  "name": "YouTube 全屏",
+  "description": "在Scratch的YouTube视频播放器中启用全屏按钮",
+  "credits": [
+    {
+      "name": "Maximouse",
+      "link": "https://github.com/mxmou/customize-scratch#watch-youtube-videos-on-scratch-in-full-screen"
+    }
+  ],
+  "userscripts": [
+    {
+      "url": "userscript.js",
+      "matches": ["https://scratch.mit.edu/discuss/youtube/*"],
+      "runAtComplete": false
+    }
+  ],
+  "dynamicEnable": true,
+  "tags": ["community", "forums", "recommended"],
+  "enabledByDefault": false,
+  "l10n": true
+}
